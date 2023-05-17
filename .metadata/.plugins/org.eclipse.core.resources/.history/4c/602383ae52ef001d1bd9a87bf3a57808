@@ -1,0 +1,43 @@
+package domain;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Comuna {
+	
+	// Atributos
+	private Integer numero;
+	private List<Estacion> estaciones;
+	
+	// Constructores
+	public Comuna(Integer numero) {
+		this.numero = numero;
+		this.estaciones = new ArrayList<>();
+	}
+	
+	// Getters & Setters
+	public Integer getNumero() {
+		return numero;
+	}
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+	public List<Estacion> getEstaciones() {
+		return estaciones;
+	}
+
+	public void setEstaciones(List<Estacion> estaciones) {
+		this.estaciones = estaciones;
+	}
+	
+	//Metodos 
+	public void addEstaciones(Estacion estacion) {
+		this.estaciones.add(estacion);
+	}
+	
+
+	
+
+}

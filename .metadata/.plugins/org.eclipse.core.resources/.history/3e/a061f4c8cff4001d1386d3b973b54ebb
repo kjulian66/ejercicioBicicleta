@@ -1,0 +1,83 @@
+package domain;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class Comuna {
+	
+	// Atributos
+	private Integer numero;
+	private List<Estacion> estaciones;
+	
+	// Constructores
+	public Comuna(Integer numero) {
+		this.numero = numero;
+		this.estaciones = new ArrayList<>();
+	}
+	
+	// Getters & Setters
+	public Integer getNumero() {
+		return numero;
+	}
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+	public List<Estacion> getEstaciones() {
+		return estaciones;
+	}
+
+	public void setEstaciones(List<Estacion> estaciones) {
+		this.estaciones = estaciones;
+	}
+	
+	//Metodos 
+	public void addEstaciones(Estacion estacion) {
+		this.estaciones.add(estacion);
+	}
+	
+	public Estacion buscarEstaciones(Estacion estacion) {
+		Estacion resultado = null;
+		if (this.estaciones.contains(estacion)) {
+			int indice = this.estaciones.indexOf(estacion);
+			if (indice > -1) {
+				resultado = this.estaciones.get(indice);
+			}
+		}
+		return resultado;
+	}
+	
+	public void mostrarComunas() {
+		for (Estacion estacion : estaciones) {
+			System.out.println(estacion.toString());
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Comuna [numero=" + numero + ", estaciones=" + estaciones + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(numero);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Comuna other = (Comuna) obj;
+		return Objects.equals(numero, other.numero);
+	}
+	
+	
+	
+
+}

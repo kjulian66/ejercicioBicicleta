@@ -1,0 +1,48 @@
+package test;
+
+import domain.Ciudad;
+import domain.Comuna;
+import domain.Estacion;
+import domain.Bicicleta;
+
+public class TestEjercicioBicicleta {
+
+	public static void main(String[] args) {
+		
+		Ciudad bsas = new Ciudad("Buenos Aires");
+		System.out.println(bsas);
+		
+		Comuna com1 = new Comuna(100);
+		bsas.addComunas(com1);
+		
+		Comuna com2 = new Comuna(101);
+		bsas.addComunas(com2);
+		
+		Comuna com3 = new Comuna(102);
+		bsas.addComunas(com3);
+		
+		Estacion est1 = new Estacion(1);
+		com1.addEstaciones(est1);
+		
+		Estacion est2 = new Estacion(2);
+		
+		Bicicleta bici1 = new Bicicleta(1);
+		est1.addBicicleta(bici1);
+		
+		com1.mostrarEstadoDeEstacion(1, "en reparacion");
+		bici1.setEstado("en reparacion");
+		com1.mostrarEstadoDeEstacion(1, "en reparacion");
+		
+		Bicicleta bici2 = new Bicicleta(2);
+		est1.addBicicleta(bici2);
+		com1.mostrarEstadoDeEstacion(1, "disponible");
+		
+		Bicicleta bici3 = new Bicicleta(3);
+		Bicicleta bici4 = new Bicicleta(4);
+		est2.addBicicleta(bici3);
+		est2.addBicicleta(bici4);
+		
+		com1.estacionConMayorDisponibilidad();
+	}
+
+}

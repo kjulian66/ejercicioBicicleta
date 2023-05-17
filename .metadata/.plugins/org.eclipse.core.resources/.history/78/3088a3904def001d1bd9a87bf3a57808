@@ -1,0 +1,16 @@
+package test;
+
+import domain.Ciudad;
+import domain.Comuna;
+import domain.Estacion;
+import domain.Bicicleta;
+
+public class TestEjercicioBicicleta {
+
+	public static void main(String[] args) {
+		
+		Ciudad bsas = new Ciudad("Buenos Aires");
+		System.out.println(bsas);
+	}
+
+}

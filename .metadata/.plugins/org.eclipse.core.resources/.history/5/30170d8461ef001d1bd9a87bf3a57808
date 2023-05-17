@@ -1,0 +1,92 @@
+package domain;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class Estacion {
+	
+	
+	//Atributos
+	private Integer numero;
+	private List<Bicicleta> bicicletas;
+	
+
+	//Constructores
+	public Estacion(Integer numero) {
+		this.numero = numero;
+		this.bicicletas = new ArrayList<>();
+	}
+
+	// Getters & Setters
+	public Integer getNumero() {
+		return numero;
+	}
+
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+
+	public List<Bicicleta> getBicicletas() {
+		return bicicletas;
+	}
+
+
+	public void setBicicletas(List<Bicicleta> bicicletas) {
+		this.bicicletas = bicicletas;
+	}
+	
+	//Metodos
+	public void addBicicleta(Bicicleta bicicleta) {
+		this.bicicletas.add(bicicleta);
+	}
+	
+	public Bicicleta buscarBicicleta(Bicicleta bicicleta) {
+		Bicicleta resultado = null;
+		if (this.bicicletas.contains(bicicleta)) {
+			int indice = this.bicicletas.indexOf(bicicleta);
+			if (indice > -1) {
+				resultado = this.bicicletas.get(indice);
+			}
+		}
+		return resultado;
+	}
+	
+	public void mostrarComunas() {
+		for (Bicicleta bicicleta : bicicletas) {
+			System.out.println(bicicleta.toString());
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Bicicleta [numero=" + numero + ", bicicletas=" + bicicletas + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(numero);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Estacion other = (Estacion) obj;
+		return Objects.equals(numero, other.numero);
+	}
+
+	
+	
+	
+	
+
+	
+	
+}

@@ -1,0 +1,77 @@
+package domain;
+
+import java.util.Objects;
+
+public class Bicicleta {
+	
+	// Atributos
+	private Integer codigo;
+	private String estado;
+	
+	//Constantes 
+	public static final String DISPONIBLE = "DISPONIBLE";
+	public static final String EN_USO = "EN USO";
+	public static final String EN_REPARACION = "EN REPARACION";
+	
+	//Constructores
+	public Bicicleta(Integer codigo) {
+		this.codigo = codigo;
+		this.estado = DISPONIBLE;
+	}
+	
+	//Getters & Setters
+	public Integer getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
+	//Metodos
+	
+	public void enUso() {
+		this.estado = EN_USO;
+	}
+	
+	public void disponible() {
+		this.estado = DISPONIBLE;
+	}
+	
+	public void enReparacion() {
+		this.estado = EN_REPARACION;
+	}
+	
+	@Override
+	public String toString() {
+		return "Bicicleta [codigo=" + codigo + ", estado=" + estado + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(estado);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Bicicleta other = (Bicicleta) obj;
+		return Objects.equals(estado, other.estado);
+	}
+	
+	
+	
+}

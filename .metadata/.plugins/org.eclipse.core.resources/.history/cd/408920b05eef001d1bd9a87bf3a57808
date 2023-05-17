@@ -1,0 +1,32 @@
+package test;
+
+import domain.Ciudad;
+import domain.Comuna;
+import domain.Estacion;
+import domain.Bicicleta;
+
+public class TestEjercicioBicicleta {
+
+	public static void main(String[] args) {
+		
+		Ciudad bsas = new Ciudad("Buenos Aires");
+		System.out.println(bsas);
+		
+		Comuna com1 = new Comuna(100);
+		bsas.addComunas(com1);
+		
+		Comuna com2 = new Comuna(101);
+		bsas.addComunas(com2);
+		
+		Comuna com3 = new Comuna(100);
+		bsas.addComunas(com3);
+		
+		System.out.println(bsas);
+		
+		bsas.mostrarComunas();
+		
+		System.out.println(bsas.buscarComunas(com3));
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+package domain;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Comuna {
+	
+	// Atributos
+	private Integer numero;
+	private List<Estacion> estaciones;
+	
+	// Constructores
+	public Comuna(Integer numero) {
+		this.numero = numero;
+		this.estaciones = new ArrayList<>();
+	}
+
+}

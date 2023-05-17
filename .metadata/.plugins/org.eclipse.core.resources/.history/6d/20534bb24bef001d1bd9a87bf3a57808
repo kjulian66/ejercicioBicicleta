@@ -1,0 +1,14 @@
+package domain;
+
+public class Ciudad {
+	
+	// Atributos
+	private String nombre;
+	private Comuna comunas;
+
+	// Constructores
+	public Ciudad(String nombre) {
+		this.nombre = nombre;
+	}
+	
+}

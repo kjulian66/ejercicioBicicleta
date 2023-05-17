@@ -1,0 +1,19 @@
+package domain;
+
+public class Bicicleta {
+	
+	// Atributos
+	private Integer codigo;
+	private String estado;
+	
+	//Constantes 
+	public static final String DISPONIBLE = "DISPONIBLE";
+	public static final String EN_USO = "EN USO";
+	public static final String EN_REPARACION = "EN REPARACION";
+	
+	//Constructores
+	public Bicicleta(Integer codigo, String estado) {
+		this.codigo = codigo;
+		this.estado = estado;
+	}
+}
